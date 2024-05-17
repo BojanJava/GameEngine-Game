@@ -48,7 +48,7 @@ public class Shader {
 	private String filepath;        // For error handling.
 	
 	
-	public Shader (String filepath) {
+	public Shader(String filepath) {
 		this.filepath = filepath;
 		
 		try {

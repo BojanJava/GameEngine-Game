@@ -15,7 +15,7 @@ public class MouseListener {
 	private boolean[] mouseButtonPressed = new boolean[3];
 	private boolean isDragging;
 	
-	private MouseListener () {
+	private MouseListener() {
 		this.scrollX = 0.0;
 		this.scrollY = 0.0;
 		this.xPos = 0.0;
