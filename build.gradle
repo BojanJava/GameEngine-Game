@@ -44,6 +44,10 @@ project.ext.jomlVersion = "1.10.5"
 project.ext.lwjglNatives = "natives-linux"
 
 dependencies {
+	// ImGui stuff
+	implementation fileTree('libs') { include '*.jar' }
+	
+	// LWJGL stuff
 	implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
 
 	implementation "org.lwjgl:lwjgl"
