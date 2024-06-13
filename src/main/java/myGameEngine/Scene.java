@@ -2,6 +2,7 @@ package myGameEngine;
 
 import java.util.ArrayList;
 import java.util.List;
+import imgui.ImGui;
 import renderer.Renderer;
 
 public abstract class Scene {
@@ -11,6 +12,7 @@ public abstract class Scene {
 	private boolean isRunning = false;
 	
 	protected List<GameObject> gameObjects = new ArrayList<>();
+	protected GameObject activeGameObject = null;
 	
 	public Scene() {
 		
@@ -43,5 +45,19 @@ public abstract class Scene {
 	
 	public Camera camera() {
 		return this.camera;
+	}
+	
+	public void sceneImgui() {
+		if(activeGameObject != null) {
+			ImGui.begin("Inspector");
+			activeGameObject.imgui();
+			ImGui.end();
+		}
+		
+		imgui();
+	}
+	
+	public void imgui() {
+		
 	}
 }

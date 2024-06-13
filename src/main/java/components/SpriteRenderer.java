@@ -3,6 +3,7 @@ package components;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
+import imgui.ImGui;
 import myGameEngine.Component;
 import myGameEngine.Transform;
 import renderer.Texture;
@@ -38,6 +39,16 @@ public class SpriteRenderer extends Component {
 			this.gameObject.transform.copy(this.lastTransform);
 			isDirty = true;
 		}
+	}
+	
+	@Override
+	public void imgui() {
+		float[] imColor = {color.x, color.y, color.z, color.w};
+		if(ImGui.colorPicker4("Color Picker: ", imColor)) {
+			this.color.set(imColor[0], imColor[1], imColor[2], imColor[3]);   
+			this.isDirty = true;
+		}
+		
 	}
 	
 	public Vector4f getColor() {
