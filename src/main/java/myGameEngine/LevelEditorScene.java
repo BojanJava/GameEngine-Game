@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import components.SpriteRenderer;
 import components.Spritesheet;
 import imgui.ImGui;
+import components.Rigidbody;
 import components.Sprite;
 import util.AssetPool;
 
@@ -25,6 +26,7 @@ public class LevelEditorScene extends Scene {
 		loadResources();
 		this.camera = new Camera(new Vector2f());
 		if(levelLoaded) {
+			this.activeGameObject = gameObjects.get(0);
 			return;
 		}
 		
@@ -34,6 +36,7 @@ public class LevelEditorScene extends Scene {
 		obj1Sprite = new SpriteRenderer();
 		obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
 		obj1.addComponent(obj1Sprite);
+		obj1.addComponent(new Rigidbody());
 		this.addGameObjectToScene(obj1);
 		this.activeGameObject = obj1;
 		
@@ -53,6 +56,7 @@ public class LevelEditorScene extends Scene {
 		AssetPool.addSpritesheet("assets/images/spriteSheetT.png",
 								 new Spritesheet(AssetPool.getTexture("assets/images/spriteSheetT.png"),
 								 16, 16, 6, 0)); 
+		AssetPool.getTexture("assets/images/squareG.png");
 	}
 
 	@Override
