@@ -6,12 +6,14 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
-            "x": 0.94413406,
-            "y": 0.81754625,
-            "z": 0.81754625,
+            "x": 0.9207317,
+            "y": 0.7579194,
+            "z": 0.7579194,
             "w": 1.0
           },
           "sprite": {
+            "width": 0.0,
+            "height": 0.0,
             "texCoords": [
               {
                 "x": 1.0,
@@ -71,6 +73,8 @@
             "w": 1.0
           },
           "sprite": {
+            "width": 0.0,
+            "height": 0.0,
             "texture": {
               "filepath": "assets/images/squareG.png",
               "texID": 3,
